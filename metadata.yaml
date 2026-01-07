@@ -1,0 +1,46 @@
+# GGVIBE Flutter Web PWA
+# Clean Architecture Chat Application
+
+project:
+  name: GGVIBE
+  version: 1.0.0
+  description: Flutter Web PWA for realtime 1:1 chat with clean architecture
+  type: web-pwa
+
+technologies:
+  frontend:
+    - Flutter 3.x
+    - Dart 3.x
+  backend:
+    - Firebase Auth
+    - Cloud Firestore
+    - Firebase Storage
+  architecture:
+    - Clean Architecture
+    - BLoC Pattern
+  
+features:
+  - Email authentication (login/signup)
+  - Telegram-style inbox UI
+  - 1:1 realtime chat
+  - Message list with timestamps
+  - Send text messages
+  - PWA support with manifest
+  - Offline capabilities
+
+structure:
+  layers:
+    - domain: Business logic and entities
+    - data: Data sources and repositories
+    - presentation: UI and state management
+  
+  modules:
+    - auth: Authentication feature
+    - chat: Chat messaging feature
+    - core: Shared utilities and base classes
+
+notes:
+  - No demo/mock data included
+  - No secrets or credentials committed
+  - Production-ready scaffold
+  - Requires Firebase configuration
