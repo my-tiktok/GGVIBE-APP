@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../entities/conversation_entity.dart';
+import '../../domain/entities/conversation_entity.dart';
 
 class ConversationModel extends ConversationEntity {
   const ConversationModel({
