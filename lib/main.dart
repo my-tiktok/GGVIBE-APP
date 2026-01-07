@@ -13,12 +13,25 @@ import 'features/chat/presentation/pages/inbox_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
+  // Firebase configuration - must be replaced with actual values
+  const apiKey = 'YOUR_API_KEY';
+  const projectId = 'YOUR_PROJECT_ID';
+  
+  // Validate Firebase configuration
+  if (apiKey == 'YOUR_API_KEY' || projectId == 'YOUR_PROJECT_ID') {
+    throw Exception(
+      'Firebase configuration not set!\n'
+      'Please replace the placeholder values in lib/main.dart with your actual Firebase configuration.\n'
+      'See SETUP.md for detailed instructions.',
+    );
+  }
+  
   // Initialize Firebase
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-      apiKey: 'YOUR_API_KEY',
+      apiKey: apiKey,
       authDomain: 'YOUR_AUTH_DOMAIN',
-      projectId: 'YOUR_PROJECT_ID',
+      projectId: projectId,
       storageBucket: 'YOUR_STORAGE_BUCKET',
       messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
       appId: 'YOUR_APP_ID',

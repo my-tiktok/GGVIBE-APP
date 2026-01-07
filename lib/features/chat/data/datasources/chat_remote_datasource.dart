@@ -68,11 +68,11 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
       // Add message to messages collection
       await firestore.collection('messages').add(message.toFirestore());
 
-      // Update conversation last message
-      await firestore.collection('conversations').doc(conversationId).update({
+      // Update conversation last message (create if doesn't exist)
+      await firestore.collection('conversations').doc(conversationId).set({
         'lastMessage': text,
         'lastMessageTime': Timestamp.now(),
-      });
+      }, SetOptions(merge: true));
     } catch (e) {
       throw Exception('Failed to send message: ${e.toString()}');
     }
